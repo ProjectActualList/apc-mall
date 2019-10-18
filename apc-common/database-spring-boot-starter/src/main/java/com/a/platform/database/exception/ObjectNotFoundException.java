@@ -1,4 +1,4 @@
-package com.a.platform.database;
+package com.a.platform.database.exception;
 
 /**
  * 对像未找到异常<br>

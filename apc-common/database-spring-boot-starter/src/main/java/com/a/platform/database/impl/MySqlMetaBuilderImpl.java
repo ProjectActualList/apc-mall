@@ -1,9 +1,9 @@
 package com.a.platform.database.impl;
 
 import com.a.platform.database.util.ReflectionUtil;
-import com.a.platform.database.ColumnMeta;
-import com.a.platform.database.DataMeta;
-import com.a.platform.database.SqlMetaBuilder;
+import com.a.platform.database.meta.ColumnMeta;
+import com.a.platform.database.meta.DataMeta;
+import com.a.platform.database.meta.SqlMetaBuilder;
 import com.a.platform.database.annotation.Table;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

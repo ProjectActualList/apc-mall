@@ -56,6 +56,12 @@
             <artifactId>commons-collections4</artifactId>
             <version>${commons-collections4.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectjrt.version}</version>
+        </dependency>
     </dependencies>
 
 

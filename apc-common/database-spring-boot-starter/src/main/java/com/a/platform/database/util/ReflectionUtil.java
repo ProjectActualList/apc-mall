@@ -1,7 +1,7 @@
 package com.a.platform.database.util;
 
 import com.a.platform.common.util.StringUtil;
-import com.a.platform.database.ColumnMeta;
+import com.a.platform.database.meta.ColumnMeta;
 import com.a.platform.database.annotation.Column;
 import com.a.platform.database.annotation.Id;
 import org.apache.commons.collections4.map.HashedMap;

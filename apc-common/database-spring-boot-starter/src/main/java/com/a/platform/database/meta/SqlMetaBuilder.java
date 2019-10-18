@@ -1,4 +1,6 @@
-package com.a.platform.database;
+package com.a.platform.database.meta;
+
+import com.a.platform.database.meta.DataMeta;
 
 /**
  * 元数据构建器

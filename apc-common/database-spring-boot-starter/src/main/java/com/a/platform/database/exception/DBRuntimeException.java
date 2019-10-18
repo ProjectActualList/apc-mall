@@ -1,4 +1,4 @@
-package com.a.platform.database;
+package com.a.platform.database.exception;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

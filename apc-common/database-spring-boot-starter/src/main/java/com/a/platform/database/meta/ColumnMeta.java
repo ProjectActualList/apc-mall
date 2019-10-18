@@ -1,4 +1,4 @@
-package com.a.platform.database;
+package com.a.platform.database.meta;
 
 /**
  * 列数据
