@@ -1,9 +1,9 @@
 package com.a.platform.redis;
 
-import com.enation.app.javashop.framework.redis.builder.RedisTemplateBuilder;
-import com.enation.app.javashop.framework.redis.builder.StringRedisTemplateBuilder;
-import com.enation.app.javashop.framework.redis.configure.RedisConnectionConfig;
-import com.enation.app.javashop.framework.redis.configure.RedisType;
+import com.a.platform.redis.builder.RedisTemplateBuilder;
+import com.a.platform.redis.builder.StringRedisTemplateBuilder;
+import com.a.platform.redis.configure.RedisConnectionConfig;
+import com.a.platform.redis.configure.RedisType;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.ClusterServersConfig;
@@ -25,13 +25,12 @@ import java.util.Set;
 
 /**
  * Redis配置
- * @author kingapex
- * 2017年8月2日上午11:52:50
  *
- * 修改文件位置,增加RedissonClinet的配置
- * @version 2.0
- * @since 6.4
+ * @author weixing.yang
+ * @version 1.0
+ * @date 2019/10/19 16:00
  */
+@SuppressWarnings("ALL")
 @Configuration
 public class RedisConfig {
 
