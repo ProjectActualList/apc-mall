@@ -36,13 +36,13 @@ public class BaseSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         http.cors().and().csrf().disable()
-                //禁用session
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+            //禁用session
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
-                //定义验权失败返回格式
-                .exceptionHandling().accessDeniedHandler(accessDeniedHandler).authenticationEntryPoint(authenticationEntryPoint).and()
+            //定义验权失败返回格式
+            .exceptionHandling().accessDeniedHandler(accessDeniedHandler).authenticationEntryPoint(authenticationEntryPoint).and()
 
-                .authorizeRequests().anyRequest().anonymous().and().headers().frameOptions().disable().and().headers().cacheControl();
+            .authorizeRequests().anyRequest().anonymous().and().headers().frameOptions().disable().and().headers().cacheControl();
 
         //过滤掉swagger的路径
         http.authorizeRequests().antMatchers("/v2/api-docs",

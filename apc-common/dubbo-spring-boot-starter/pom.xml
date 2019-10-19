@@ -16,20 +16,14 @@
             <groupId>com.a.platform</groupId>
             <artifactId>common-spring-boot-starter</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <optional>true</optional>
         </dependency>
 
         <!-- Dubbo 相关 -->
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
+            <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo.version}</version>
+            <version>0.2.1.RELEASE</version>
         </dependency>
-
-
     </dependencies>
 </project>
