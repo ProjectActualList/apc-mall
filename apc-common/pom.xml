@@ -28,13 +28,19 @@
         <fastjson.version>1.2.62</fastjson.version>
         <jsoup.version>1.12.1</jsoup.version>
         <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-io.version>2.6</commons-io.version>
 
         <commons-collections4.version>4.4</commons-collections4.version>
         <aspectjrt.version>1.9.4</aspectjrt.version>
+        <jackson.version>2.10.0</jackson.version>
+        <ant.version>1.10.7</ant.version>
 
         <elasticsearch-x-pack-transport.version>5.6.1</elasticsearch-x-pack-transport.version>
 
         <elasticsearch.version>5.6.10</elasticsearch.version>
+        <jjwt.version>0.9.1</jjwt.version>
+
+        <dubbo.version>2.7.3</dubbo.version>
     </properties>
 
     <modules>
@@ -43,6 +49,8 @@
         <module>database-spring-boot-starter</module>
         <module>redis-spring-boot-starter</module>
         <module>elasticsearch-spring-boot-starter</module>
+        <module>security-spring-boot-starter</module>
+        <module>dubbo-spring-boot-starter</module>
     </modules>
 
 </project>

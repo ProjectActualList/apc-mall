@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
 
     <groupId>com.a.platform</groupId>
     <artifactId>apc-mall</artifactId>
@@ -11,45 +16,26 @@
 
     <modules>
         <module>apc-common</module>
+        <module>mall-api</module>
+        <module>mall-service</module>
+        <module>mall-client</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
 
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
-        <dubbo.version>2.7.3</dubbo.version>
-        <jackson.version>2.10.0</jackson.version>
+
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Boot -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.boot.version}</version>
-                <type>pom</type>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR3</version>
                 <scope>import</scope>
-            </dependency>
-
-            <!-- Dubbo 相关 -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-spring-boot-starter</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-
-
-            <!-- jackson -->
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
