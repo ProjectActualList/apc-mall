@@ -1,0 +1,11 @@
+server:
+    port: 8081
+
+dubbo:
+    application:
+        name: buyer-api
+    monitor:
+        protocol: registry
+    registry:
+        address: zookeeper://127.0.0.1:2181
+

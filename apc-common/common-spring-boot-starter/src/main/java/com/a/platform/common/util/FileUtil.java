@@ -491,44 +491,39 @@ public class FileUtil {
     public static String contentType(String fileType) {
         fileType = fileType.toLowerCase();
         String contentType = "";
-        switch (fileType) {
-            case "bmp":
-                contentType = "image/bmp";
-                break;
-            case "gif":
-                contentType = "image/gif";
-                break;
-            case "png":
-            case "jpeg":
-            case "jpg":
-                contentType = "image/jpeg";
-                break;
-            case "html":
-                contentType = "text/html";
-                break;
-            case "txt":
-                contentType = "text/plain";
-                break;
-            case "vsd":
-                contentType = "application/vnd.visio";
-                break;
-            case "ppt":
-            case "pptx":
-                contentType = "application/vnd.ms-powerpoint";
-                break;
-            case "doc":
-            case "docx":
-                contentType = "application/msword";
-                break;
-            case "xml":
-                contentType = "text/xml";
-                break;
-            case "mp4":
-                contentType = "video/mp4";
-                break;
-            default:
-                contentType = "application/octet-stream";
-                break;
+        if ("bmp".equals(fileType)) {
+            contentType = "image/bmp";
+
+        } else if ("gif".equals(fileType)) {
+            contentType = "image/gif";
+
+        } else if ("png".equals(fileType) || "jpeg".equals(fileType) || "jpg".equals(fileType)) {
+            contentType = "image/jpeg";
+
+        } else if ("html".equals(fileType)) {
+            contentType = "text/html";
+
+        } else if ("txt".equals(fileType)) {
+            contentType = "text/plain";
+
+        } else if ("vsd".equals(fileType)) {
+            contentType = "application/vnd.visio";
+
+        } else if ("ppt".equals(fileType) || "pptx".equals(fileType)) {
+            contentType = "application/vnd.ms-powerpoint";
+
+        } else if ("doc".equals(fileType) || "docx".equals(fileType)) {
+            contentType = "application/msword";
+
+        } else if ("xml".equals(fileType)) {
+            contentType = "text/xml";
+
+        } else if ("mp4".equals(fileType)) {
+            contentType = "video/mp4";
+
+        } else {
+            contentType = "application/octet-stream";
+
         }
         return contentType;
     }

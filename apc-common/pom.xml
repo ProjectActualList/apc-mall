@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <swagger2.version>2.9.2</swagger2.version>
 
         <druid-spring-boot-starter.version>1.1.20</druid-spring-boot-starter.version>
@@ -40,7 +42,7 @@
         <elasticsearch.version>5.6.10</elasticsearch.version>
         <jjwt.version>0.9.1</jjwt.version>
 
-        <dubbo.version>2.7.3</dubbo.version>
+        <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
     </properties>
 
     <modules>

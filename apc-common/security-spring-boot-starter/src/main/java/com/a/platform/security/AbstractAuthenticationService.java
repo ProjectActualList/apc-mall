@@ -1,25 +1,25 @@
 package com.a.platform.security;
 
-import com.enation.app.javashop.framework.cache.Cache;
-import com.enation.app.javashop.framework.security.model.JWTConstant;
-import com.enation.app.javashop.framework.util.DateUtil;
-import com.enation.app.javashop.framework.util.StringUtil;
-import com.enation.app.javashop.framework.util.TokenKeyGenerate;
+import com.a.platform.common.util.DateUtil;
+import com.a.platform.common.util.StringUtil;
+import com.a.platform.common.util.TokenKeyGenerate;
+import com.a.platform.security.model.JWTConstant;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import sun.misc.Cache;
 
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * 公共安全配置
  *
- * @author zh
- * @version v7.0
- * @date 18/8/7 下午8:23
- * @since v7.0
+ * @author weixing.yang
+ * @version 1.0
+ * @date 2019/10/22 11:22
  */
+@SuppressWarnings("ALL")
 public abstract class AbstractAuthenticationService {
 
     protected final Log logger = LogFactory.getLog(this.getClass());
@@ -71,7 +71,7 @@ public abstract class AbstractAuthenticationService {
             long clientTimes = Long.parseLong(timestamp);
             //当前时间大于时间戳60秒即为失效。
             if ((currTime - clientTimes) > JWTConstant.INVALID_TIME) {
-                if ( logger.isDebugEnabled() ) {
+                if (logger.isDebugEnabled()) {
                     logger.debug("服务器时间：" + currTime);
                     logger.debug("客户端时间：" + clientTimes);
                     logger.debug("验权时间戳超时，判为重放攻击 ");
@@ -83,18 +83,18 @@ public abstract class AbstractAuthenticationService {
             String value = (String) this.cache.get(key);
             //如果redis中存在说明已经被使用过
             if (value != null) {
-                if ( logger.isDebugEnabled() ) {
-                    logger.debug(" nonce["+nonce+"] 被使用过,判为重放攻击  ");
+                if (logger.isDebugEnabled()) {
+                    logger.debug(" nonce[" + nonce + "] 被使用过,判为重放攻击  ");
                 }
                 return null;
             } else {
                 //客户端时间戳秒数+失效秒数
-                this.cache.put(key, "used", JWTConstant.INVALID_TIME);
+                //this.cache.put(key, "used", JWTConstant.INVALID_TIME);
 
             }
             //读取用户的id
 
-            token = StringUtil.toString(cache.get(TokenKeyGenerate.generateBuyerAccessToken(uuid,Integer.parseInt(uid))));
+            token = StringUtil.toString(cache.get(TokenKeyGenerate.generateBuyerAccessToken(uuid, Integer.parseInt(uid))));
 
 
             //验证签名 uid+ nonce + timestamp +token
@@ -103,11 +103,11 @@ public abstract class AbstractAuthenticationService {
 
             if (!clientSign.equals(serverSign)) {
 
-                if ( logger.isDebugEnabled() ) {
-                    logger.debug("key is "+ "ACCESS_TOKEN_" + uid + uuid);
-                    logger.debug(" 服务器token: "+ token);
+                if (logger.isDebugEnabled()) {
+                    logger.debug("key is " + "ACCESS_TOKEN_" + uid + uuid);
+                    logger.debug(" 服务器token: " + token);
                     logger.debug("服务器签名为：" + serverSign);
-                    logger.debug("clientSign "+ clientSign);
+                    logger.debug("clientSign " + clientSign);
                     logger.debug(" 签名失败,判为重放攻击 ");
                 }
 

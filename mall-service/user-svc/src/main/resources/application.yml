@@ -1,13 +1,13 @@
-#dubbo.application.name=user-service-provider
-#dubbo.registry.address=127.0.0.1:2181
-#dubbo.registry.protocol=zookeeper
-#
-#dubbo.protocol.name=dubbo
-##dubbo.protocol.port=20881
-#
-#dubbo.monitor.protocol=registry
-##dubbo.scan.base-packages=com.atguigu.gmall
-
-
-
-
+dubbo:
+    application:
+        name: user-service
+    monitor:
+        protocol: registry
+    protocol:
+        name: dubbo
+        port: 20881
+    registry:
+        address: 127.0.0.1:2181
+        protocol: zookeeper
+    scan:
+      base-packages: com.a.platform
