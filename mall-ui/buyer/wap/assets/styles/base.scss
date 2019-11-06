@@ -1,0 +1,181 @@
+@import "color";
+
+/* 公共样式重置
+   ========================================================================== */
+body {
+  font: 12px/150% tahoma, arial, Microsoft YaHei, Hiragino Sans GB, "\u5b8b\u4f53", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+  background: #fff;
+  display: block;
+}
+
+body {
+  font-family: "Microsoft YaHei","Microsoft JhengHei",SimSun,verdana,Tahoma,arial;
+  position: relative;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+tt, b, u, i, input, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #666
+}
+
+a:link {
+  text-decoration: none;
+  outline: none;
+}
+
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  outline: none;
+  color: $color-main;
+}
+
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+i, em {
+  font-style: normal;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  vertical-align:bottom
+}
+
+:focus {
+  outline: 0;
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select:focus,
+textarea {
+  font-size: 16px;
+}
+
+/* 公共样式
+   ========================================================================== */
+.clear, .clr {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+* + html .clearfix {
+  height: 1%;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/** input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+
+/** others */
+.price {
+  color: $color-main !important;
+}
+
+.sku-spec {
+  color: #ff9800 !important;
+}
+
+/** vant样式覆盖 */
+.van-nav-bar {
+  .van-nav-bar__title, .van-nav-bar__text, .van-icon {
+    color: $color-van-nav-bar-icon !important;
+  }
+}
+
+.van-dialog__confirm, .van-dialog__confirm:active {
+  color: $color-main !important;
+}
+
+/** 大按钮样式 */
+.big-btn {
+  padding: 10px 10px 0 10px;
+  .van-button--large {
+    background-color: $color-main;
+    color: #fff;
+    &.van-button--disabled {
+      color: #999;
+      background-color: #e8e8e8;
+      border: 1px solid #e5e5e5;
+    }
+  }
+}
