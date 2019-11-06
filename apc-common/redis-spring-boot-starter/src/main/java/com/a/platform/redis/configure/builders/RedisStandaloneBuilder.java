@@ -1,11 +1,11 @@
 package com.a.platform.redis.configure.builders;
 
+import com.a.platform.redis.configure.IRedisBuilder;
+import com.a.platform.redis.configure.RedisType;
 import com.a.platform.common.util.HttpUtils;
 import com.a.platform.common.util.StringUtil;
-import com.a.platform.redis.configure.IRedisBuilder;
 import com.a.platform.redis.configure.RedisConfigType;
 import com.a.platform.redis.configure.RedisConnectionConfig;
-import com.a.platform.redis.configure.RedisType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

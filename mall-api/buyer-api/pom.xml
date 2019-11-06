@@ -15,19 +15,13 @@
     <dependencies>
         <dependency>
             <groupId>com.a.platform</groupId>
-            <artifactId>swagger-spring-boot-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.a.platform</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.a.platform</groupId>
             <artifactId>user-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.a.platform</groupId>
+            <artifactId>base-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

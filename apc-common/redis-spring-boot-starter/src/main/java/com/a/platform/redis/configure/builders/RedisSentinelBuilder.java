@@ -1,5 +1,8 @@
 package com.a.platform.redis.configure.builders;
 
+import com.a.platform.redis.configure.IRedisBuilder;
+import com.a.platform.redis.configure.JedisSetting;
+import com.a.platform.redis.configure.RedisType;
 import com.a.platform.common.util.HttpUtils;
 import com.a.platform.common.util.StringUtil;
 import com.a.platform.redis.configure.*;

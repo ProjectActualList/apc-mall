@@ -1,10 +1,10 @@
 package com.a.platform.redis.builder;
 
 
-import com.a.platform.common.exception.ServiceException;
-import com.a.platform.common.exception.SystemErrorCode;
 import com.a.platform.redis.configure.IRedisBuilder;
 import com.a.platform.redis.configure.JedisSetting;
+import com.a.platform.common.exception.ServiceException;
+import com.a.platform.common.exception.SystemErrorCode;
 import com.a.platform.redis.configure.RedisConnectionConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

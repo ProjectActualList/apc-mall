@@ -1,0 +1,21 @@
+server:
+  port: 6001
+
+dubbo:
+    application:
+        name: base-api
+    monitor:
+        protocol: registry
+    registry:
+        address: zookeeper://127.0.0.1:2181
+
+redis:
+  type: standalone #:可选值： cluster,sentinel,standalone
+  config :
+    type: manual #配置类型，可选的有:manual(手动),rest（rest api配置）
+  host: 192.168.1.245
+  port: 6777
+  password: huangong@123
+  maxIdle: 500
+  maxTotal: 500
+  maxWaitMillis: -1

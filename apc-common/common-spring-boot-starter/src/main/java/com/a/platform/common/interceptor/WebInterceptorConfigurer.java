@@ -1,8 +1,8 @@
 package com.a.platform.common.interceptor;
 
-import com.a.platform.common.context.SnakeToCamelArgumentResolver;
 import com.a.platform.common.context.SnakeToCamelModelAttributeMethodProcessor;
 import com.a.platform.common.context.XssStringJsonSerializer;
+import com.a.platform.common.context.SnakeToCamelArgumentResolver;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.context.annotation.Bean;

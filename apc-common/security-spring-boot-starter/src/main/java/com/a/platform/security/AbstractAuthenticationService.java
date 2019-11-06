@@ -3,12 +3,12 @@ package com.a.platform.security;
 import com.a.platform.common.util.DateUtil;
 import com.a.platform.common.util.StringUtil;
 import com.a.platform.common.util.TokenKeyGenerate;
+import com.a.platform.redis.cache.Cache;
 import com.a.platform.security.model.JWTConstant;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import sun.misc.Cache;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
  * @version 1.0
  * @date 2019/10/22 11:22
  */
-@SuppressWarnings("ALL")
 public abstract class AbstractAuthenticationService {
 
     protected final Log logger = LogFactory.getLog(this.getClass());
@@ -89,17 +88,13 @@ public abstract class AbstractAuthenticationService {
                 return null;
             } else {
                 //客户端时间戳秒数+失效秒数
-                //this.cache.put(key, "used", JWTConstant.INVALID_TIME);
-
+                this.cache.put(key, "used", JWTConstant.INVALID_TIME);
             }
             //读取用户的id
 
             token = StringUtil.toString(cache.get(TokenKeyGenerate.generateBuyerAccessToken(uuid, Integer.parseInt(uid))));
-
-
             //验证签名 uid+ nonce + timestamp +token
             String serverSign = StringUtil.md5(uid + nonce + timestamp + token);
-
 
             if (!clientSign.equals(serverSign)) {
 
@@ -110,13 +105,10 @@ public abstract class AbstractAuthenticationService {
                     logger.debug("clientSign " + clientSign);
                     logger.debug(" 签名失败,判为重放攻击 ");
                 }
-
                 return null;
             }
         }
-
         return token;
-
     }
 
     protected String getUuid(HttpServletRequest req) {

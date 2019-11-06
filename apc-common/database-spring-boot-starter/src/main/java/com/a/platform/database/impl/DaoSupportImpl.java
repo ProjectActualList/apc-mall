@@ -1,8 +1,8 @@
 package com.a.platform.database.impl;
 
+import com.a.platform.database.DaoSupport;
 import com.a.platform.common.result.Page;
 import com.a.platform.common.util.StringUtil;
-import com.a.platform.database.*;
 import com.a.platform.database.exception.DBRuntimeException;
 import com.a.platform.database.exception.ObjectNotFoundException;
 import com.a.platform.database.meta.DataMeta;

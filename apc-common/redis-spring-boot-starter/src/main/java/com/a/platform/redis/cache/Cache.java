@@ -5,8 +5,10 @@ import java.util.Map;
 
 /**
  * 缓存接口
- * @author kingapex
  *
+ * @author weixing.yang
+ * @version 1.0
+ * @date 2019/10/22 15:38
  */
 public interface Cache<T> {
 	

@@ -60,11 +60,10 @@ public class RedisCacheImpl implements Cache {
 
 
     /**
-     * 42      * 判断缓存中是否有对应的value
-     * 43      *
-     * 44      * @param key
-     * 45      * @return
-     * 46
+     * 判断缓存中是否有对应的value
+     *
+     * @param key
+     * @return
      */
     public boolean exists(final String key) {
         return redisTemplate.hasKey(key);
