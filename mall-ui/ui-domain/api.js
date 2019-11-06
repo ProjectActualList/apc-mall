@@ -13,10 +13,10 @@ const env = process.server
 module.exports = {
   // 开发环境
   dev: {
-    base  : 'http://javashop7.s1.natapp.cc/base-api',
-    buyer : 'http://javashop7.s1.natapp.cc/buyer-api',
-    seller: 'http://javashop7.s1.natapp.cc/seller-api',
-    admin : 'http://javashop7.s1.natapp.cc/manager-api'
+    base  : 'http://127.0.0.1:7000/base-api',
+    buyer : 'http://127.0.0.1:7002/buyer-api',
+    seller: 'http://127.0.0.1:7003/seller-api',
+    admin : 'http://127.0.0.1:7004/manager-api'
   },
   // 生产环境
   pro: {

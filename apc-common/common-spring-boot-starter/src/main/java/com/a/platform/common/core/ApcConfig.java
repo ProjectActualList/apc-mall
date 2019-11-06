@@ -5,14 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * javashop配置
- *
- * @author zh
- * @version v7.0
- * @date 18/4/13 下午8:19
- * @since v7.0
- */
-/**
  * APC 配置
  *
  * @author weixing.yang
@@ -76,7 +68,7 @@ public class ApcConfig {
 
     @Override
     public String toString() {
-        return "JavashopConfig{" +
+        return "ApcConfigConfig{" +
                 "accessTokenTimeout=" + accessTokenTimeout +
                 ", refreshTokenTimeout=" + refreshTokenTimeout +
                 ", captchaTimout=" + captchaTimout +

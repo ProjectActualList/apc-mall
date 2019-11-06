@@ -1,4 +1,4 @@
-package com.a.platform.base.service.service;
+package com.a.platform.base.service.client;
 
 /**
  * 图片验证码业务层
@@ -7,7 +7,7 @@ package com.a.platform.base.service.service;
  * @version 1.1.0
  * @date 2019/10/22 15:10
  */
-public interface CaptchaService {
+public interface CaptchaClient {
 
     /**
      * 图片验证

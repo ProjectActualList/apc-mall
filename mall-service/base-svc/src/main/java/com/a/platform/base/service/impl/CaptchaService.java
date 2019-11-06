@@ -3,8 +3,8 @@ package com.a.platform.base.service.impl;
 import com.a.platform.base.service.model.SettingGroup;
 import com.a.platform.base.service.model.SiteSetting;
 import com.a.platform.redis.cache.Cache;
-import com.a.platform.base.service.service.CaptchaService;
-import com.a.platform.base.service.service.SettingService;
+import com.a.platform.base.service.client.CaptchaClient;
+import com.a.platform.base.service.client.SettingClient;
 import com.a.platform.common.context.ThreadContextHolder;
 import com.a.platform.common.core.ApcConfig;
 import com.a.platform.common.core.CachePrefix;
@@ -30,7 +30,7 @@ import java.util.Random;
  */
 @Service
 @Component
-public class CaptchaServiceImpl implements CaptchaService {
+public class CaptchaService implements CaptchaClient {
 
     @Autowired
     private ApcConfig apcConfig;
@@ -38,7 +38,7 @@ public class CaptchaServiceImpl implements CaptchaService {
     @Autowired
     private Cache cache;
 
-    @Reference
+    @Autowired
     private SettingService settingService;
 
 

@@ -1,7 +1,7 @@
 package com.a.platform.user.service.impl;
 
 import com.a.platform.redis.cache.Cache;
-import com.a.platform.base.service.service.PassportService;
+import com.a.platform.base.service.client.PassportClient;
 import com.a.platform.common.exception.ResourceNotFoundException;
 import com.a.platform.common.exception.ServiceException;
 import com.a.platform.common.util.DateUtil;
@@ -47,7 +47,7 @@ public class MemberServiceImpl implements MemberService {
     @Autowired
     private AmqpTemplate amqpTemplate;
     @Autowired
-    private PassportService passportService;
+    private PassportClient passportClient;
     @Autowired
     private Cache cache;
     @Autowired
@@ -313,8 +313,8 @@ public class MemberServiceImpl implements MemberService {
         if (!member.getDisabled().equals(0)) {
             throw new ServiceException(UserErrorCode.E107.code(), "当前账号已经禁用，请联系管理员");
         }
-        String accessToken = passportService.createToken(member, apcConfig.getAccessTokenTimeout());
-        String refreshToken = passportService.createToken(member, apcConfig.getRefreshTokenTimeout());
+        String accessToken = passportClient.createToken(member, apcConfig.getAccessTokenTimeout());
+        String refreshToken = passportClient.createToken(member, apcConfig.getRefreshTokenTimeout());
         //组织返回数据
         MemberVO memberVO = new MemberVO(member, accessToken, refreshToken);
         cache.put(TokenKeyGenerate.generateBuyerAccessToken(ThreadContextHolder.getHttpRequest().getHeader("uuid"), member.getMemberId()), accessToken, apcConfig.getAccessTokenTimeout() + 60);
@@ -335,8 +335,8 @@ public class MemberServiceImpl implements MemberService {
         if (!member.getDisabled().equals(0)) {
             throw new ServiceException(UserErrorCode.E107.code(), "当前账号已经禁用，请联系管理员");
         }
-        String accessToken = passportService.createToken(member, apcConfig.getAccessTokenTimeout());
-        String refreshToken = passportService.createToken(member, apcConfig.getRefreshTokenTimeout());
+        String accessToken = passportClient.createToken(member, apcConfig.getAccessTokenTimeout());
+        String refreshToken = passportClient.createToken(member, apcConfig.getRefreshTokenTimeout());
         //组织返回数据
         MemberVO memberVO = new MemberVO(member, accessToken, refreshToken);
         cache.put(TokenKeyGenerate.generateBuyerAccessToken(uuid, member.getMemberId()), accessToken, apcConfig.getAccessTokenTimeout() + 60);

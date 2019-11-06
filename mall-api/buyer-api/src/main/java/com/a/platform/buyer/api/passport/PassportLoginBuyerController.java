@@ -1,7 +1,7 @@
 package com.a.platform.buyer.api.passport;
 
-import com.a.platform.base.service.service.CaptchaService;
-import com.a.platform.base.service.service.PassportService;
+import com.a.platform.base.service.client.CaptchaClient;
+import com.a.platform.base.service.client.PassportClient;
 import com.a.platform.common.core.SceneType;
 import com.a.platform.common.exception.ServiceException;
 import com.a.platform.user.exception.UserErrorCode;
@@ -32,16 +32,14 @@ import javax.validation.constraints.NotEmpty;
 public class PassportLoginBuyerController {
 
     @Reference
-    private PassportService passportService;
+    private PassportClient passportClient;
 
     @Reference
-    private CaptchaService captchaService;
+    private CaptchaClient captchaClient;
 
     @Reference
     private MemberService memberService;
 
-//    @Autowired
-//    private SmsClient smsClient;
 
     @PostMapping(value = "/login/smscode/{mobile}")
     @ApiOperation(value = "发送验证码")
@@ -51,13 +49,13 @@ public class PassportLoginBuyerController {
             @ApiImplicitParam(name = "mobile", value = "手机号码", required = true, dataType = "String", paramType = "path"),
     })
     public String sendSmsCode(@NotEmpty(message = "uuid不能为空") String uuid, @NotEmpty(message = "图片验证码不能为空") String captcha, @PathVariable("mobile") String mobile) {
-        boolean isPass = captchaService.valid(uuid, captcha, SceneType.LOGIN.name());
+        boolean isPass = captchaClient.valid(uuid, captcha, SceneType.LOGIN.name());
         if (!isPass) {
             throw new ServiceException(UserErrorCode.E107.code(), "图片验证码不正确！");
         }
-        passportService.sendLoginSmsCode(mobile);
+        passportClient.sendLoginSmsCode(mobile);
         //清清除图片验证码信息
-        captchaService.deleteCode(uuid, captcha, SceneType.LOGIN.name());
+        captchaClient.deleteCode(uuid, captcha, SceneType.LOGIN.name());
         return null;
     }
 
@@ -71,7 +69,7 @@ public class PassportLoginBuyerController {
     })
     public MemberVO login(@NotEmpty(message = "用户名不能为空") String username, @NotEmpty(message = "密码不能为空") String password, @NotEmpty(message = "图片验证码不能为空") String captcha, @NotEmpty(message = "uuid不能为空") String uuid) {
         //验证图片验证码是否正确
-        boolean isPass = captchaService.valid(uuid, captcha, SceneType.LOGIN.name());
+        boolean isPass = captchaClient.valid(uuid, captcha, SceneType.LOGIN.name());
         if (!isPass) {
             throw new ServiceException(UserErrorCode.E107.code(), "图片验证码错误！");
         }

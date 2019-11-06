@@ -1,4 +1,4 @@
-package com.a.platform.base.service.service;
+package com.a.platform.base.service.client;
 
 
 import com.a.platform.base.service.model.SettingGroup;
@@ -10,7 +10,7 @@ import com.a.platform.base.service.model.SettingGroup;
  * @version 1.0
  * @date 2019/10/22 15:23
  */
-public interface SettingService {
+public interface SettingClient {
     /**
      * 系统参数配置
      *

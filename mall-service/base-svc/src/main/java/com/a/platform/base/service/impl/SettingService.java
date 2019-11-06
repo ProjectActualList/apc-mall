@@ -1,13 +1,13 @@
 package com.a.platform.base.service.impl;
 
+import com.a.platform.base.service.client.SettingClient;
 import com.a.platform.base.service.model.SettingGroup;
 import com.a.platform.base.service.model.SettingsDO;
-import com.a.platform.redis.cache.Cache;
-import com.a.platform.base.service.service.SettingService;
-import com.a.platform.database.DaoSupport;
 import com.a.platform.common.core.CachePrefix;
 import com.a.platform.common.util.JsonUtil;
 import com.a.platform.common.util.StringUtil;
+import com.a.platform.database.DaoSupport;
+import com.a.platform.redis.cache.Cache;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,14 +26,14 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Component
-public class SettingServiceImpl implements SettingService {
+public class SettingService implements SettingClient {
 
 
     @Autowired
     @Qualifier("systemDaoSupport")
     private DaoSupport systemDaoSupport;
 
-    @Reference
+    @Autowired
     private Cache cache;
 
     @Override

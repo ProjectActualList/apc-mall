@@ -1,6 +1,6 @@
 package com.a.platform.base.service.api;
 
-import com.a.platform.base.service.service.CaptchaService;
+import com.a.platform.base.service.client.CaptchaClient;
 import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CaptchaBaseController {
 
     @Reference
-    private CaptchaService captchaService;
+    private CaptchaClient captchaClient;
 
     @GetMapping(value = "/{uuid}/{scene}")
     @ApiOperation(value = "生成验证码")
@@ -36,7 +36,7 @@ public class CaptchaBaseController {
     public String getCode(@PathVariable("uuid") String uuid, @PathVariable("scene") String scene) {
 
         //直接调取业务类，由业务类输出流到浏览器
-        this.captchaService.writeCode(uuid, scene);
+        this.captchaClient.writeCode(uuid, scene);
 
         return null;
     }

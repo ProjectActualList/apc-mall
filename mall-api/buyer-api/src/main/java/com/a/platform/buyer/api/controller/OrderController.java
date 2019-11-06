@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class OrderController {
 	
 	@Autowired
-	OrderService orderService;
+	//OrderService orderService;
 	
 	@ResponseBody
 	@RequestMapping("/initOrder")
-	public List<UserAddress> initOrder(@RequestParam("uid")String userId) {
-		return orderService.initOrder(userId);
+	public List<UserAddress> initOrder(@RequestParam("uid") String userId) {
+		return null;
 	}
 
 }

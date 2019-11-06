@@ -1,4 +1,4 @@
-package com.a.platform.base.service.service;
+package com.a.platform.base.service.client;
 
 
 /**
@@ -8,7 +8,7 @@ package com.a.platform.base.service.service;
  * @version 1.0
  * @date 2019/10/22 15:44
  */
-public interface PassportService {
+public interface PassportClient {
     /**
      * 发送注册短信验证码
      *
