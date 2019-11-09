@@ -12,8 +12,13 @@
     <artifactId>mall-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>user-svc</module>
+        <module>member-svc</module>
         <module>base-svc</module>
+        <module>goods-svc</module>
+        <module>trade-svc</module>
+        <module>statistics-svc</module>
+        <module>distribution-svc</module>
+        <module>consumer-svc</module>
     </modules>
 
     <dependencies>
@@ -43,7 +48,7 @@
 
         <dependency>
             <groupId>com.a.platform</groupId>
-            <artifactId>user-client</artifactId>
+            <artifactId>member-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

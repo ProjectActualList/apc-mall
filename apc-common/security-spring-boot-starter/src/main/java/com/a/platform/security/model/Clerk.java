@@ -1,8 +1,6 @@
 package com.a.platform.security.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * 店员
@@ -11,8 +9,7 @@ import lombok.Setter;
  * @version 1.0
  * @date 2019/10/19 16:39
  */
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
 public class Clerk extends Seller {
 

@@ -3,7 +3,7 @@ package com.a.platform.buyer.api.service.impl;
 import java.util.Arrays;
 import java.util.List;
 
-import com.a.platform.user.model.UserAddress;
+import com.a.platform.member.model.UserAddress;
 import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 

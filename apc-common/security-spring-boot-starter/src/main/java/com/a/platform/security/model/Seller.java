@@ -1,8 +1,6 @@
 package com.a.platform.security.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * 卖家
@@ -11,8 +9,7 @@ import lombok.Setter;
  * @version 1.0
  * @date 2019/10/19 16:42
  */
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
 public class Seller extends  Buyer {
 
@@ -31,9 +28,10 @@ public class Seller extends  Buyer {
      */
     private Integer selfOperated;
 
-    //seller有 买家的角色和卖家角色
+    /**
+     * seller有 买家的角色和卖家角色
+     */
     public Seller() {
-
          add( Role.SELLER);
     }
 

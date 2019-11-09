@@ -2,7 +2,7 @@ package com.a.platform.buyer.api.controller;
 
 import java.util.List;
 
-import com.a.platform.user.model.UserAddress;
+import com.a.platform.member.model.UserAddress;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

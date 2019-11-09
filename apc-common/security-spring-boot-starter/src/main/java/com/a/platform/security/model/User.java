@@ -1,8 +1,6 @@
 package com.a.platform.security.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +15,7 @@ import java.util.List;
  * 2018/3/8
  */
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class User {
 
     /**

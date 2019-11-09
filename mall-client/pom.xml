@@ -12,8 +12,8 @@
     <artifactId>mall-client</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>user-client</module>
         <module>base-client</module>
+        <module>member-client</module>
     </modules>
 
     <dependencies>

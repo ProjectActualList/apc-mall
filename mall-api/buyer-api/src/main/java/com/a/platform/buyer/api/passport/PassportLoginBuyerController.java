@@ -1,12 +1,12 @@
 package com.a.platform.buyer.api.passport;
 
 import com.a.platform.base.service.client.CaptchaClient;
-import com.a.platform.base.service.client.PassportClient;
 import com.a.platform.common.core.SceneType;
 import com.a.platform.common.exception.ServiceException;
-import com.a.platform.user.exception.UserErrorCode;
-import com.a.platform.user.model.MemberVO;
-import com.a.platform.user.service.MemberService;
+import com.a.platform.member.client.MemberClient;
+import com.a.platform.member.client.PassportClient;
+import com.a.platform.member.exception.MemberErrorCode;
+import com.a.platform.member.model.dto.MemberFaceBO;
 import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -38,7 +38,7 @@ public class PassportLoginBuyerController {
     private CaptchaClient captchaClient;
 
     @Reference
-    private MemberService memberService;
+    private MemberClient memberClient;
 
 
     @PostMapping(value = "/login/smscode/{mobile}")
@@ -51,7 +51,7 @@ public class PassportLoginBuyerController {
     public String sendSmsCode(@NotEmpty(message = "uuid不能为空") String uuid, @NotEmpty(message = "图片验证码不能为空") String captcha, @PathVariable("mobile") String mobile) {
         boolean isPass = captchaClient.valid(uuid, captcha, SceneType.LOGIN.name());
         if (!isPass) {
-            throw new ServiceException(UserErrorCode.E107.code(), "图片验证码不正确！");
+            throw new ServiceException(MemberErrorCode.E107.code(), "图片验证码不正确！");
         }
         passportClient.sendLoginSmsCode(mobile);
         //清清除图片验证码信息
@@ -67,14 +67,14 @@ public class PassportLoginBuyerController {
             @ApiImplicitParam(name = "captcha", value = "验证码", required = true, dataType = "String", paramType = "query"),
             @ApiImplicitParam(name = "uuid", value = "客户端唯一标识", required = true, dataType = "String", paramType = "query"),
     })
-    public MemberVO login(@NotEmpty(message = "用户名不能为空") String username, @NotEmpty(message = "密码不能为空") String password, @NotEmpty(message = "图片验证码不能为空") String captcha, @NotEmpty(message = "uuid不能为空") String uuid) {
+    public MemberFaceBO login(@NotEmpty(message = "用户名不能为空") String username, @NotEmpty(message = "密码不能为空") String password, @NotEmpty(message = "图片验证码不能为空") String captcha, @NotEmpty(message = "uuid不能为空") String uuid) {
         //验证图片验证码是否正确
         boolean isPass = captchaClient.valid(uuid, captcha, SceneType.LOGIN.name());
         if (!isPass) {
-            throw new ServiceException(UserErrorCode.E107.code(), "图片验证码错误！");
+            throw new ServiceException(MemberErrorCode.E107.code(), "图片验证码错误！");
         }
         //校验账号信息是否正确
-        return memberService.login(username, password,1);
+        return memberClient.login(username, password, 1);
     }
 
     @GetMapping("/login/{mobile}")
@@ -84,12 +84,12 @@ public class PassportLoginBuyerController {
             @ApiImplicitParam(name = "sms_code", value = "手机验证码", required = true, dataType = "String", paramType = "query"),
             @ApiImplicitParam(name = "uuid", value = "客户端唯一标识", required = true, dataType = "String", paramType = "query")
     })
-    public MemberVO mobileLogin(@PathVariable String mobile, @ApiIgnore @NotEmpty(message = "短信验证码不能为空") String smsCode) {
+    public MemberFaceBO mobileLogin(@PathVariable String mobile, @ApiIgnore @NotEmpty(message = "短信验证码不能为空") String smsCode) {
         boolean isPass = true;//smsClient.valid(SceneType.LOGIN.name(), mobile, smsCode);
         if (!isPass) {
-            throw new ServiceException(UserErrorCode.E107.code(), "短信验证码错误！");
+            throw new ServiceException(MemberErrorCode.E107.code(), "短信验证码错误！");
         }
-        return memberService.mobileLogin(mobile,1);
+        return memberClient.mobileLogin(mobile, 1);
 
     }
 }

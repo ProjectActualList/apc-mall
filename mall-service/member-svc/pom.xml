@@ -3,29 +3,43 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>mall-api</artifactId>
+        <artifactId>mall-service</artifactId>
         <groupId>com.a.platform</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>buyer-api</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>member-svc</artifactId>
+
 
     <dependencies>
+        <dependency>
+            <groupId>com.a.platform</groupId>
+            <artifactId>database-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.a.platform</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.a.platform</groupId>
+            <artifactId>mq-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>com.a.platform</groupId>
             <artifactId>member-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>com.a.platform</groupId>
             <artifactId>base-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -34,5 +48,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
