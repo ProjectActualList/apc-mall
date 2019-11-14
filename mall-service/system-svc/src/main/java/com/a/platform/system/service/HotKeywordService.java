@@ -11,6 +11,7 @@ import com.a.platform.system.convert.HotKeywordConvert;
 import com.a.platform.system.model.HotKeywordDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +27,8 @@ import java.util.List;
  * @version 1.0
  * @date 2019/11/14 15:27
  */
-@Service
+@Component
+@com.alibaba.dubbo.config.annotation.Service(validation = "true", version = "${dubbo.provider.HotKeywordClient.version}")
 public class HotKeywordService implements HotKeywordClient {
 
     @Autowired

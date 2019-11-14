@@ -91,7 +91,9 @@ dubbo:
       base-packages: com.a.platform
     provider:
       filter: -exception
-      SystemService:
+      HotKeywordClient:
+        version: 1.0
+      SiteNavigationClient:
         version: 1.0
     consumer:
       timeout: 120000 # 设置长一点，方便调试代码

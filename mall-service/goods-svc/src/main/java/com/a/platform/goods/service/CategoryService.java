@@ -14,7 +14,7 @@ import com.a.platform.security.model.Seller;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,7 +28,7 @@ import java.util.List;
  * @version v1.0
  * @since v7.0.0 2018-03-15 17:22:06
  */
-@Service
+@Component
 @com.alibaba.dubbo.config.annotation.Service(validation = "true", version = "${dubbo.provider.CategoryService.version}")
 public class CategoryService implements CategoryClient {
 

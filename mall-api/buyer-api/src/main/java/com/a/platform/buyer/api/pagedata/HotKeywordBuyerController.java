@@ -26,7 +26,7 @@ import java.util.List;
 @Api(description = "热门关键字相关API")
 public class HotKeywordBuyerController {
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.provider.HotKeywordClient.version}")
     private HotKeywordClient hotKeywordClient;
 
 

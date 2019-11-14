@@ -11,9 +11,10 @@ import com.a.platform.goods.model.BrandBO;
 import com.a.platform.goods.model.BrandDO;
 import com.a.platform.goods.model.BrandDTO;
 import com.a.platform.goods.model.SelectBO;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,8 +28,8 @@ import java.util.List;
  * @version v2.0
  * @since v7.0.0 2018-03-16 16:32:46
  */
-@Service
-@com.alibaba.dubbo.config.annotation.Service(validation = "true", version = "${dubbo.provider.BrandClient.version}")
+@Component
+@Service(validation = "true", version = "${dubbo.provider.BrandClient.version}")
 public class BrandService implements BrandClient {
 
     @Autowired

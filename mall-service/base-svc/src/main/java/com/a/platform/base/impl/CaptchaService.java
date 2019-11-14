@@ -26,7 +26,7 @@ import java.util.Random;
  * @version 1.0
  * @date 2019/10/22 15:16
  */
-@Service
+@Service(validation = "true", version = "${dubbo.provider.CaptchaClient.version}")
 @Component
 public class CaptchaService implements CaptchaClient {
 

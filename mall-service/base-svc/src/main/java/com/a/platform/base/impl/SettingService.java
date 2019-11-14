@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 1.0
  * @date 2019/10/22 15:31
  */
-@Service
+@Service(validation = "true", version = "${dubbo.provider.SettingClient.version}")
 @Component
 public class SettingService implements SettingClient {
 
