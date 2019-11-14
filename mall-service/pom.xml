@@ -19,6 +19,7 @@
         <module>statistics-svc</module>
         <module>distribution-svc</module>
         <module>consumer-svc</module>
+        <module>system-svc</module>
     </modules>
 
     <dependencies>

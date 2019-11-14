@@ -95,8 +95,6 @@ public class JwtAuthenticationService extends AbstractAuthenticationService {
                     logger.error(e);
                 }
             }
-
-
         }
 
         return null;

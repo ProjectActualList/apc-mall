@@ -1,8 +1,6 @@
 package com.a.platform.common.core;
 
 import com.a.platform.common.util.StringUtil;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -55,7 +53,7 @@ public class DomainSettings {
     }
 
     public String getTopLevelDomain() {
-        if(StringUtil.isEmpty(topLevelDomain)){
+        if (StringUtil.isEmpty(topLevelDomain)) {
             return this.getMain();
         }
         return topLevelDomain;

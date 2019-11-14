@@ -1,0 +1,91 @@
+server:
+  port: 7000
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://192.168.1.245:3306/clsc_goods?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password: huangong@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      web-stat-filter:
+        enabled: false
+      goods:
+        url: jdbc:mysql://192.168.1.245:3306/clsc_goods?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      member:
+        url: jdbc:mysql://192.168.1.245:3306/clsc_member?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      sss:
+        url: jdbc:mysql://192.168.1.245:3306/clsc_sss?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      system:
+        url: jdbc:mysql://192.168.1.245:3306/clsc_system?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      trade:
+        url: jdbc:mysql://192.168.1.245:3306/clsc_trade?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+      distribution:
+        url: jdbc:mysql://192.168.1.245:3306/clsc_distribution?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+  rabbitmq:
+    host: 192.168.1.245
+    port: 5670
+    username: administrator
+    password: administrator
+
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.1.245:9300,192.168.1.245:9301,192.168.1.245:9302
+      xpack:
+        security:
+          user:
+  # 上传文件大小上限设置
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.jdbc.core.JdbcTemplate: INFO
+    com.enation.app : INFO
+
+redis:
+  type: standalone #:可选值： cluster,sentinel,standalone
+  config :
+    type: manual #配置类型，可选的有:manual(手动),rest（rest api配置）
+  host: 192.168.1.245
+  port: 6777
+  password: huangong@123
+  maxIdle: 500
+  maxTotal: 500
+  maxWaitMillis: -1
+
+apc:
+  product: stand
+  timeout:
+    accessTokenTimeout:  1800
+    refreshTokenTimeout: 3600
+    captchaTimout:  120
+    smscodeTimout: 120
+  domain:
+    main: 127.0.0.1:8888
+    buyer: 127.0.0.1:8888
+    mobileBuyer: 127.0.0.1:8888
+
+dubbo:
+    application:
+        name: system-service
+    monitor:
+        protocol: registry
+    protocol:
+        name: dubbo
+        port: 20881
+    registry:
+        address: 127.0.0.1:2181
+        protocol: zookeeper
+    scan:
+      base-packages: com.a.platform

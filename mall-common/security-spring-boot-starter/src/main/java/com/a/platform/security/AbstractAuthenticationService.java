@@ -40,7 +40,7 @@ public abstract class AbstractAuthenticationService {
     public String getToken(HttpServletRequest req) {
 
         String token = null;
-        if ("dev".equals(profile) || "test".equals(profile)) {
+        if ("dev".equals(profile)) {
             token = req.getHeader(JWTConstant.HEADER_STRING);
             if (StringUtil.notEmpty(token)) {
                 token = token.replaceAll(JWTConstant.TOKEN_PREFIX, "").trim();

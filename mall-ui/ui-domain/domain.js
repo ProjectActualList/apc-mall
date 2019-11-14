@@ -13,16 +13,16 @@ const env = process.server
 module.exports = {
   // 开发环境
   dev: {
-    buyer_pc : 'http://127.0.0.1:3000',
-    buyer_wap: 'http://127.0.0.1:3001',
-    seller   : 'http://127.0.0.1:3002',
-    admin    : 'http://127.0.0.1:3003'
+    buyer_pc : 'http://192.168.1.119:3000',
+    buyer_wap: 'http://192.168.1.119:3001',
+    seller   : 'http://192.168.1.119:3002',
+    admin    : 'http://192.168.1.119:3003'
   },
   // 生产环境
   pro: {
-    buyer_pc : env.DOMAIN_BUYER_PC || 'http://127.0.0.1:7000',
-    buyer_wap: env.DOMAIN_BUYER_WAP || 'http://127.0.0.1:7000',
-    seller   : env.DOMAIN_SELLER || 'http://127.0.0.1:7000',
-    admin    : env.DOMAIN_ADMIN || 'http://127.0.0.1:7000'
+    buyer_pc : env.DOMAIN_BUYER_PC || 'http://192.168.1.119:7000',
+    buyer_wap: env.DOMAIN_BUYER_WAP || 'http://192.168.1.119:7000',
+    seller   : env.DOMAIN_SELLER || 'http://192.168.1.119:7000',
+    admin    : env.DOMAIN_ADMIN || 'http://192.168.1.119:7000'
   }
 }

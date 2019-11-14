@@ -1,6 +1,6 @@
 package com.a.platform.buyer.api.passport;
 
-import com.a.platform.base.service.client.CaptchaClient;
+import com.a.platform.base.client.CaptchaClient;
 import com.a.platform.common.core.SceneType;
 import com.a.platform.common.exception.ServiceException;
 import com.a.platform.member.client.MemberClient;

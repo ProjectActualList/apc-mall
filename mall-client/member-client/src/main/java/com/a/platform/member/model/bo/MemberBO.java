@@ -191,12 +191,12 @@ public class MemberBO implements Serializable {
     private String nickname;
 
     public MemberBO(MemberBO member, String sccessToken, String refreshToken) {
-        this.uid = member.getMemberId();
-        this.face = member.getFace();
-        this.username = member.getUname();
-        this.nickname = member.getNickname();
-        this.accessToken = sccessToken;
-        this.refreshToken = refreshToken;
+//        this.uid = member.getMemberId();
+//        this.face = member.getFace();
+//        this.username = member.getUname();
+//        this.nickname = member.getNickname();
+//        this.accessToken = sccessToken;
+//        this.refreshToken = refreshToken;
     }
 
 }
