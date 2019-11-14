@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -84,6 +85,9 @@ public class HotKeywordService implements HotKeywordClient {
     public List<HotKeywordBO> listByNum(Integer num) {
         String sql = " select * from es_hot_keyword order by sort asc  limit 0,? ";
         List<HotKeywordDO> hotKeywordDOList = this.daoSupport.queryForList(sql, HotKeywordDO.class, num);
-        return HotKeywordConvert.INSTANCE.convert(hotKeywordDOList);
+        if(hotKeywordDOList != null){
+            return HotKeywordConvert.INSTANCE.convert(hotKeywordDOList);
+        }
+        return new ArrayList<>();
     }
 }

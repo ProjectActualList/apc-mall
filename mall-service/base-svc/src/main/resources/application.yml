@@ -78,7 +78,7 @@ apc:
 
 dubbo:
     application:
-        name: user-service
+        name: base-service
     monitor:
         protocol: registry
     protocol:
@@ -89,3 +89,13 @@ dubbo:
         protocol: zookeeper
     scan:
       base-packages: com.a.platform
+    provider:
+      filter: -exception
+      BaseService:
+        version: 1.0
+    consumer:
+      timeout: 120000 # 设置长一点，方便调试代码
+      buyer-api:
+        version: 1.0
+      base-api:
+        version: 1.0

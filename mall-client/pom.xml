@@ -15,6 +15,7 @@
         <module>base-client</module>
         <module>member-client</module>
         <module>system-client</module>
+        <module>goods-client</module>
     </modules>
 
     <dependencies>

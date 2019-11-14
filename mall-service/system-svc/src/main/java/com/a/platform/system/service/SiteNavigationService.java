@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -177,13 +178,13 @@ public class SiteNavigationService implements SiteNavigationClient {
 
         if(list == null){
             String sql = "select * from es_site_navigation  where  client_type = ? order by sort desc";
-
             list = this.daoSupport.queryForList(sql,SiteNavigationDO.class,clientType);
-
             cache.put(CachePrefix.SITE_NAVIGATION.getPrefix()+clientType,list);
         }
-
-        return SiteNavigationConvert.INSTANCE.convert(list);
+        if(list != null) {
+            return SiteNavigationConvert.INSTANCE.convert(list);
+        }
+        return new ArrayList<>();
     }
 
     /**

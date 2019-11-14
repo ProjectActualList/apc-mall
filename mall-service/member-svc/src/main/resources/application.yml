@@ -78,7 +78,7 @@ apc:
 
 dubbo:
     application:
-        name: user-service
+        name: member-service
     monitor:
         protocol: registry
     protocol:

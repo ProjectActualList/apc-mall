@@ -78,7 +78,7 @@ apc:
 
 dubbo:
     application:
-        name: system-service
+        name: goods-service
     monitor:
         protocol: registry
     protocol:
@@ -91,11 +91,11 @@ dubbo:
       base-packages: com.a.platform
     provider:
       filter: -exception
-      SystemService:
+      CategoryClient:
+        version: 1.0
+      BrandClient:
         version: 1.0
     consumer:
       timeout: 120000 # 设置长一点，方便调试代码
       buyer-api:
-        version: 1.0
-      base-api:
         version: 1.0
