@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>apc-common</module>
+        <module>mall-common</module>
         <module>mall-api</module>
         <module>mall-service</module>
         <module>mall-client</module>

@@ -20,9 +20,9 @@ module.exports = {
   },
   // 生产环境
   pro: {
-    base  : env.API_BASE || 'http://javashop7.s1.natapp.cc/base-api',
-    buyer : env.API_BUYER || 'http://javashop7.s1.natapp.cc/buyer-api',
-    seller: env.API_SELLER || 'http://javashop7.s1.natapp.cc/seller-api',
-    admin : env.API_ADMIN || 'http://javashop7.s1.natapp.cc/manager-api'
+    base  : env.API_BASE || 'http://127.0.0.1:7000/base-api',
+    buyer : env.API_BUYER || 'http://127.0.0.1:7000/buyer-api',
+    seller: env.API_SELLER || 'http://127.0.0.1:7000/seller-api',
+    admin : env.API_ADMIN || 'http://127.0.0.1:7000/manager-api'
   }
 }

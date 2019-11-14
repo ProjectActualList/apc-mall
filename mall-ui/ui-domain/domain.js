@@ -20,9 +20,9 @@ module.exports = {
   },
   // 生产环境
   pro: {
-    buyer_pc : env.DOMAIN_BUYER_PC || 'http://www.javashop7.s1.natapp.cc',
-    buyer_wap: env.DOMAIN_BUYER_WAP || 'http://m.javashop7.s1.natapp.cc',
-    seller   : env.DOMAIN_SELLER || 'http://seller.javashop7.s1.natapp.cc',
-    admin    : env.DOMAIN_ADMIN || 'http://admin.javashop7.s1.natapp.cc'
+    buyer_pc : env.DOMAIN_BUYER_PC || 'http://127.0.0.1:7000',
+    buyer_wap: env.DOMAIN_BUYER_WAP || 'http://127.0.0.1:7000',
+    seller   : env.DOMAIN_SELLER || 'http://127.0.0.1:7000',
+    admin    : env.DOMAIN_ADMIN || 'http://127.0.0.1:7000'
   }
 }

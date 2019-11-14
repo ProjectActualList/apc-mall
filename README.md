@@ -4,7 +4,7 @@
 ## 项目结构
 
     apc-mall
-        |- apc-common
+        |- mall-common
             |- common-spring-boot-starter
             |- database-spring-boot-starter
             |- dubbo-spring-boot-starter
