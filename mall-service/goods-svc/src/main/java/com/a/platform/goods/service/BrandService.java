@@ -22,11 +22,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 品牌业务类
+ * 品牌
  *
- * @author fk
- * @version v2.0
- * @since v7.0.0 2018-03-16 16:32:46
+ * @author weixing.yang
+ * @version 1.0
+ * @date 2019/11/19 16:32
  */
 @Component
 @Service(validation = "true", version = "${dubbo.provider.BrandClient.version}")

@@ -83,7 +83,7 @@ dubbo:
         protocol: registry
     protocol:
         name: dubbo
-        port: 20881
+        port: -1
     registry:
         address: 127.0.0.1:2181
         protocol: zookeeper
@@ -94,10 +94,4 @@ dubbo:
       CaptchaClient:
         version: 1.0
       SettingClient:
-        version: 1.0
-    consumer:
-      timeout: 120000 # 设置长一点，方便调试代码
-      buyer-api:
-        version: 1.0
-      base-api:
         version: 1.0

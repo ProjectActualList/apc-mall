@@ -14,11 +14,11 @@ import com.a.platform.mq.rabbitmq.AmqpExchange;
 import com.a.platform.redis.cache.Cache;
 import com.a.platform.system.convert.SiteNavigationConvert;
 import com.a.platform.system.model.SiteNavigationDO;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,7 +33,7 @@ import java.util.List;
  * @date 2019/11/14 15:00
  */
 @Component
-@com.alibaba.dubbo.config.annotation.Service(validation = "true", version = "${dubbo.provider.SiteNavigationClient.version}")
+@Service(validation = "true", version = "${dubbo.provider.SiteNavigationClient.version}")
 public class SiteNavigationService implements SiteNavigationClient {
 
     @Autowired

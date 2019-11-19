@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "验证码api")
 public class CaptchaBaseController {
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.consumer.CaptchaClient.version:1.0}")
     private CaptchaClient captchaClient;
 
     @GetMapping(value = "/{uuid}/{scene}")

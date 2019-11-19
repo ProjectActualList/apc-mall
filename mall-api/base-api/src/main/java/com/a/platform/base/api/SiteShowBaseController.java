@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(description = "站点展示")
 public class SiteShowBaseController {
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.consumer.SettingClient.version:1.0}")
     private SettingClient settingClient;
 
     @GetMapping

@@ -16,7 +16,7 @@ import java.util.List;
  * @version 1.1.0
  * @date 2019/11/14 13:58
  */
-@Mapper
+@Mapper(componentModel="spring")
 public interface BrandConvert {
 
     BrandConvert INSTANCE = Mappers.getMapper(BrandConvert.class);

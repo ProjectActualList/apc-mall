@@ -1,5 +1,5 @@
 server:
-  port: 7000
+  port: 7002
 
 spring:
   profiles:
@@ -77,25 +77,27 @@ apc:
     mobileBuyer: 127.0.0.1:8888
 
 dubbo:
-    application:
-        name: goods-service
-    monitor:
-        protocol: registry
-    protocol:
-        name: dubbo
-        port: 20881
-    registry:
-        address: 127.0.0.1:2181
-        protocol: zookeeper
-    scan:
-      base-packages: com.a.platform
-    provider:
-      filter: -exception
-      CategoryClient:
-        version: 1.0
-      BrandClient:
-        version: 1.0
-    consumer:
-      timeout: 120000 # 设置长一点，方便调试代码
-      buyer-api:
-        version: 1.0
+  application:
+    name: goods-service
+  monitor:
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+  scan:
+    base-packages: com.a.platform
+  provider:
+    filter: -exception
+    CategoryClient:
+      version: 1.0
+    BrandClient:
+      version: 1.0
+  consumer:
+    timeout: 120000 # 设置长一点，方便调试代码
+    buyer-api:
+      version: 1.0
+    base-api:
+      version: 1.0

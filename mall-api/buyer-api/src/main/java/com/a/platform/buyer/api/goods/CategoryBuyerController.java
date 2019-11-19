@@ -31,10 +31,10 @@ import java.util.List;
 @Api(description = "商品分类相关API")
 public class CategoryBuyerController {
 
-    @Reference(validation = "true", version = "${dubbo.provider.CategoryClient.version}")
+    @Reference(validation = "true", version = "${dubbo.consumer.CategoryClient.version:1.0}")
     private CategoryClient categoryClient;
 
-    @Reference(validation = "true", version = "${dubbo.provider.BrandClient.version}")
+    @Reference(validation = "true", version = "${dubbo.consumer.BrandClient.version:1.0}")
     private BrandClient brandClient;
 
     @ApiOperation(value = "首页等商品分类数据")

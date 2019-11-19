@@ -31,13 +31,13 @@ import javax.validation.constraints.NotEmpty;
 @Validated
 public class PassportLoginBuyerController {
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.consumer.PassportClient.version:1.0}")
     private PassportClient passportClient;
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.consumer.CaptchaClient.version:1.0}")
     private CaptchaClient captchaClient;
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.consumer.MemberClient.version:1.0}")
     private MemberClient memberClient;
 
 

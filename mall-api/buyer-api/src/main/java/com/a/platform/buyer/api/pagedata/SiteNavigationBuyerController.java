@@ -28,7 +28,7 @@ import java.util.List;
 @Api(description = "导航栏相关API")
 public class SiteNavigationBuyerController {
 
-    @Reference
+    @Reference(validation = "true", version = "${dubbo.consumer.SiteNavigationClient.version:1.0}")
     private SiteNavigationClient siteNavigationClient;
 
 

@@ -38,6 +38,12 @@
             |- manager-admin
             
 
+## 配置说明
+    dubbo:
+        protocol:
+            name: dubbo
+            port: -1   # -1表示随机递增
+
 ## 分层领域模型规约：
 
     1. DO（Data Object）：与数据库表结构一一对应，通过DAO层向上传输数据源对象。
